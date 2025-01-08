@@ -6,10 +6,10 @@
 	overflow: scroll;
 	transform: translate(-616px);
 	transition: transform 0.5s ease;
-}
 
-.container_open {
-	transform: translate(0);
+	&[data-is-open] {
+		transform: translate(0);
+	}
 }
 
 .form {

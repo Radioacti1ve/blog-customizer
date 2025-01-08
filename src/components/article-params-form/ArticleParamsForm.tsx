@@ -1,31 +1,20 @@
 import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 import styles from './ArticleParamsForm.module.scss';
 
 export const ArticleParamsForm = () => {
-	const [flag, setFlag] = useState(false);
-	const asideRef = useRef<HTMLElement>(null);
+	const [isOpen, setisOpen] = useState(false);
 
 	const handleClick = () => {
-		setFlag((prev) => !prev);
+		setisOpen((prev) => !prev);
 	};
-
-	useEffect(() => {
-		if (asideRef.current) {
-			if (flag) {
-				asideRef.current.classList.add(styles.container_open);
-			} else {
-				asideRef.current.classList.remove(styles.container_open);
-			}
-		}
-	}, [flag]);
 
 	return (
 		<>
-			<ArrowButton isOpen={flag} onClick={handleClick} />
-			<aside ref={asideRef} className={styles.container}>
+			<ArrowButton isOpen={isOpen} onClick={handleClick} />
+			<aside data-is-open={isOpen || undefined} className={styles.container}>
 				<form className={styles.form}>
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' htmlType='reset' type='clear' />
