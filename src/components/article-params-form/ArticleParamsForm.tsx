@@ -75,8 +75,8 @@ export const ArticleParamsForm = ({ mainRef }: ChildComponentProps) => {
 			fontFamilyState: fontFamilyOptions[0],
 			fontSizeState: fontSizeOptions[0],
 			fontColorsState: fontColors[0],
-			contentWidthState: backgroundColors[0],
-			backgroundColorsState: contentWidthArr[0],
+			contentWidthState: contentWidthArr[0],
+			backgroundColorsState: backgroundColors[0],
 		});
 
 		setIsOpen(false);
